@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Climate+Crisis&family=Dancing+Script:wght@400..700&family=Fredoka:wght@300..700&display=swap');
+
+body {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    font-family: Fredoka, Chewy, "Climate Crisis", sans-serif;
+}
+
+nav ul {
+    display: flex;
+    align-items: center; /* Align all items vertically */
+    list-style-type: none;
+    height: 65px;
+    background-color: mediumorchid;
+    padding: 0 20px;
+}
+
+nav ul li{
+    padding: 0 12px;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center; /* Align text and image at the same level */
+    gap: 10px; /* Adds spacing between the logo and text */
+    font-family: "Climate Crisis", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #f6c449; /* Main font color */
+    text-shadow:  
+        -2px -2px 0 #690087,  
+         2px -2px 0 #690087,  
+        -2px  2px 0 #690087,  
+         2px  2px 0 #690087,  
+        -3px -3px 0 #690087,  
+         3px -3px 0 #690087,  
+        -3px  3px 0 #690087,  
+         3px  3px 0 #690087; /* Thicker outline */
+        margin-left: 0;
+}
+
+.brand img {
+    width: 65px;
+    margin-left: 0;
+    padding: 0 8px;
+    height: auto;
+    border-radius: 60px;
+}
+
+.music-text {
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    color: darkslateblue;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container {
+    min-height: 75vh;
+    background-color:#20B2AA;
+    color:bisque;
+    font-family: 'Chewy',cursive !important;
+    display: flex;
+    width: 70%;
+    margin: 23px auto;
+    border-radius: 13px;
+    padding: 12px;
+    background-image: url("bg.jpg");
+}
+
+
+.bottom{
+    position:sticky;
+    height : 120px;
+    background-color: #B100CD;
+    color: white;
+    bottom: 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.icons{
+    margin-top: 12px;
+    display: flex;
+    gap: 20px;
+}
+
+.icons i{
+    cursor:pointer;
+    gap: 20px;
+}
+
+#myProgressBar{
+    width: 80vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.songItemContainer{
+    margin-top: 74px;
+}
+.songItem{
+    height: 50px;
+    display:flex;
+    background-color:bisque;
+    border-radius: 13px;
+    padding: 12px;
+    color:brown;
+    margin:12px 0;
+    justify-content: space-between;
+    align-items:center;
+
+}
+
+.songItem img{
+    width: 35px;
+    margin: 23px 0;
+    border-radius: 24px;
+}
+
+.songlistplay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    min-width: 80px;
+}
+
+.timestamp{
+    margin: 10px;
+}
+
+.timestamp i{
+    cursor: pointer;
+}
+
+.songInfo{
+    align-items: center;
+    display: flex;
+    font-family: 'Chewy', cursive;
+    font-size: 18px;
+    gap: 10px;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    width: 40px; 
+    height: 40px;
+}
