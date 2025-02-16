@@ -29,14 +29,14 @@ songItems.forEach((element, i) => {
 masterPlay.addEventListener('click', ()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
         audioElement.play();
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
+        masterPlay.classList.remove('fa-play');
+        masterPlay.classList.add('fa-pause');
         gif.style.opacity = 1;
     }
     else{
         audioElement.pause();
-        masterPlay.classList.remove('fa-pause-circle');
-        masterPlay.classList.add('fa-play-circle');
+        masterPlay.classList.remove('fa-pause');
+        masterPlay.classList.add('fa-play');
         gif.style.opacity = 0;
     }
 })
@@ -51,48 +51,46 @@ myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
 })
 
-const makeAllPlays = ()=>{
-    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-        element.classList.remove('fa-pause-circle');
-        element.classList.add('fa-play-circle');
-    })
+const makeAllPlays = () => {
+    const elements = Array.from(document.getElementsByClassName('songItemPlay'));
+    console.log(elements); // Check if elements are being selected
+    elements.forEach((element) => {
+        console.log(element); // Check each element
+        element.classList.remove('fa-pause');
+        element.classList.add('fa-play');
+    });
 }
 
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     element.addEventListener('click', (e)=>{ 
         makeAllPlays();
         songIndex = parseInt(e.target.id);
-        e.target.classList.remove('fa-play-circle');
-        e.target.classList.add('fa-pause-circle');
+        e.target.classList.remove('fa-play');
+        e.target.classList.add('fa-pause');
         audioElement.src = songs[songIndex].filePath;
+        audioElement.play();
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
         gif.style.opacity = 1;
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
+        masterPlay.classList.remove('fa-play');
+        masterPlay.classList.add('fa-pause');
     })
 })
 
 document.getElementById('next').addEventListener('click', ()=>{
-    if(songIndex>=9){
-        songIndex = 0
-    }
-    else{
-        songIndex += 1;
-    }
+    songIndex = (songIndex + 1) % songs.length; // Loop back to the start
     audioElement.src = songs[songIndex].filePath;
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
-    audioElement.play();
-    masterPlay.classList.remove('fa-play-circle');
-    masterPlay.classList.add('fa-pause-circle');
-
+    audioElement.play(); 
+    masterPlay.classList.remove('fa-play');
+    masterPlay.classList.add('fa-pause');
 })
 
 document.getElementById('previous').addEventListener('click', ()=>{
     if(songIndex<=0){
-        songIndex = 0
+        songIndex = 8
     }
     else{
         songIndex -= 1;
@@ -101,20 +99,7 @@ document.getElementById('previous').addEventListener('click', ()=>{
     masterSongName.innerText = songs[songIndex].songName;
     audioElement.currentTime = 0;
     audioElement.play();
-    masterPlay.classList.remove('fa-play-circle');
-    masterPlay.classList.add('fa-pause-circle');
+    masterPlay.classList.remove('fa-play');
+    masterPlay.classList.add('fa-pause');
 })
-Array.from(document.getElementsByClassName("songItemPlay")).forEach((element) => {
-    element.addEventListener("click", (e) => {
-        makeAllPlays();  // Reset all song play buttons
-        songIndex = parseInt(e.target.id);
-        e.target.classList.remove("fa-play");
-        e.target.classList.add("fa-pause");
-        masterSongName.innerText = songs[songIndex].songName;
-        audioElement.src = songs[songIndex].filePath;
-        audioElement.currentTime = 0;
-        audioElement.play();
-        masterPlay.classList.remove("fa-play");
-        masterPlay.classList.add("fa-pause");
-    });
-});
+
