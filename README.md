@@ -1,6 +1,6 @@
 Introduction
 
-Welcome to Hakuna Matata - It's All Music!!, a simple and elegant web application designed to bring you the best of love melodies. This project is perfect for music lovers who want to enjoy their favorite tracks with a clean and user-friendly interface.
+Welcome to Hakuna Matata - It's All Music!!, a simple and elegant web application designed to bring you some music. This project is perfect for music lovers who want to enjoy their favorite tracks with a clean and user-friendly interface.
 Features
 
     Responsive Design: Enjoy a seamless experience on all devices.
