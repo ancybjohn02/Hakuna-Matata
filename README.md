@@ -8,3 +8,7 @@ Features
     Next/Previous Track: Navigate through your playlist effortlessly.
     Progress Bar: Keep track of your song's progress.
     Dynamic Song List: Easily add or remove songs from the playlist.
+
+Sound check!?
+
+https://github.com/user-attachments/assets/2ab9fe3c-5405-47ed-a1cd-8c9bd6a70c9e
